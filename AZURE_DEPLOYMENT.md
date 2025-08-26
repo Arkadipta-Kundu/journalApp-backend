@@ -1,5 +1,14 @@
 # Azure Deployment Guide
 
+## Build Issues Fixed ✅
+
+The application now includes:
+
+- ✅ **Test Configuration**: Tests run without requiring MongoDB connection
+- ✅ **Maven Profiles**: `prod` and `azure` profiles skip tests for deployment
+- ✅ **GitHub Actions**: Automated CI/CD pipeline for Azure deployment
+- ✅ **Environment Variables**: All sensitive data externalized
+
 ## Required Azure App Service Environment Variables
 
 When deploying to Azure App Service, configure these environment variables in the Azure Portal under **Configuration > Application Settings**:
