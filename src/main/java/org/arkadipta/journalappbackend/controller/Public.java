@@ -33,6 +33,23 @@ public class Public {
                         "Journal Entry CRUD",
                         "Basic Authentication",
                         "Password Hashing"
-                });
+                },
+                "environment", detectEnvironment(),
+                "env_vars_status", Map.of(
+                        "mongodb_uri_set", System.getenv("MONGODB_URI") != null,
+                        "session_secret_set", System.getenv("SESSION_SECRET") != null,
+                        "websites_port_set", System.getenv("WEBSITES_PORT") != null));
+    }
+
+    private String detectEnvironment() {
+        if (System.getenv("WEBSITE_HOSTNAME") != null) {
+            return "Azure App Service";
+        } else if (System.getenv("COMPUTERNAME") != null) {
+            return "Windows Local";
+        } else if (System.getenv("HOSTNAME") != null) {
+            return "Linux/Unix Local";
+        } else {
+            return "Unknown";
+        }
     }
 }
