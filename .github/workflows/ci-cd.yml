@@ -29,11 +29,6 @@ jobs:
 
       - name: Run tests
         run: mvn clean test
-        env:
-          MONGODB_URI: mongodb://localhost:27017/testdb
-          MONGODB_DATABASE: testdb
-          SESSION_SECRET: test-secret-key-for-github-actions
-          SESSION_TIMEOUT: 3600
 
   build:
     runs-on: ubuntu-latest
