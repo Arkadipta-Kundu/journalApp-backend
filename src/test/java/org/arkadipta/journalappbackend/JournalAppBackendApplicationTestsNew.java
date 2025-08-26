@@ -12,7 +12,7 @@ class JournalAppBackendApplicationTests {
         // This ensures the build process works correctly
         assertTrue(true, "Application test passes");
     }
-
+    
     @Test
     void applicationMainMethodExists() {
         // Verify that the main application class exists and has a main method
